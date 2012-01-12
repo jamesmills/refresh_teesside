@@ -4,9 +4,9 @@
   .copy
     %p=simple_format h(@event.body) 
   .reg-btn
-    = link_to image_tag("reg-btn.png"), @event.booking_url, :target => "_blank"
+    = link_to image_tag("reg-btn.png", :title => "Register Now"), @event.booking_url, :target => "_blank"
   .mail-btn
-    = link_to image_tag("email-btn.png"), "mailto:hello@refreshteesside.org?Subject=Refresh%20Teesside"
+    = link_to image_tag("email-btn.png", :title => "Email Us"), "mailto:hello@refreshteesside.org?Subject=Refresh%20Teesside"
 
 .location
   =raw(@event.location_map)
