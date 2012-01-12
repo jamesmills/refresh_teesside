@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Refresh
+    = stylesheet_link_tag 'application'
+    
+  %body
+    .header
+      .container
+        .logo
+          =image_tag("logo.png")
+        .vert-divider
+        .atten
+          %h2.stats Attendences
+          %h2.figure= @atten
+        .drinks
+          %h2.stats Beverages 
+          %h2.figure= @drinks
+        .vert-divider
+        %nav.social
+          =link_to image_tag("group.png"), "http://groups.google.com/group/refresh-teesside", :target => "_blank"
+          =link_to image_tag("twitter.png"), "https://twitter.com/#!/refreshteesside", :target => "_blank"
+          =link_to image_tag("fb.png"), "https://www.facebook.com/refreshteesside", :target => "_blank"
+    .main
+      .container
+        = yield 
+    .bottom
+      .container
+        %nav
+          %li.group= link_to"Refresh Forum", "http://groups.google.com/group/refresh-teesside", :target => "_blank"
+          %li.twitter= link_to "Follow Refresh", "https://twitter.com/#!/refreshteesside", :target => "_blank"
+          %li.fb= link_to "Facebook Group", "https://twitter.com/#!/refreshteesside", :target => "_blank"

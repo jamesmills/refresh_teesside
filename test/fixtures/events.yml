@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  event_date: 2012-01-09
+  attendence: 1
+  drinks: 1
+  twitter: 1
+  booking_url: MyString
+  location_map: MyText
+  location_address: MyString
+  location_phone: MyString
+  location_url: MyString
+  location_twitter: MyString
+
+two:
+  title: MyString
+  body: MyText
+  event_date: 2012-01-09
+  attendence: 1
+  drinks: 1
+  twitter: 1
+  booking_url: MyString
+  location_map: MyText
+  location_address: MyString
+  location_phone: MyString
+  location_url: MyString
+  location_twitter: MyString

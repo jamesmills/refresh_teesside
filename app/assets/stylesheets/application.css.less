@@ -1,0 +1,376 @@
+/*
+ *= require_self
+ */
+/*-----------------------------------------------------------------------------
+Refresh Style Sheet
+
+version:   1.0
+author:    Christopher Scott
+
+
+/* TOC
+-----------------------------------------------------------------------------
+
+1  - General
+2  - Typography
+3  - Headings
+4  - Links
+5  - Layout - General 
+6  - Branding
+7  - Main Navigation
+8  - Sub Navigation
+9  - Layout - Header
+10 - Layout - Main Content
+11 - Layout - Footer
+12 - Forms
+
+
+*/
+
+/* 1=General
+-----------------------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, fieldset, table, ul {
+	margin: 10px 0;
+}
+.clear {
+	clear:both;
+}
+img {
+	border: 0;
+}
+html {
+	height:100%;
+}
+body {
+	margin:0 auto;
+    background: url("bg.jpg");
+	background-color:#393F46;
+	padding:0;
+}
+ul {
+	list-style-type: none;
+	padding: inherit;
+	margin:  inherit;
+}
+ol {
+	list-style: none;
+	padding:  inherit;
+	margin:  inherit;
+}
+li {
+	list-style:none;
+}
+/* 2=Typography
+-----------------------------------------------------------------------------*/
+
+body {
+	font-size:15px;
+	font-family: "gotham_book", Courier, monospace;
+	color:#595059;
+}
+
+/* 3=Headings
+-----------------------------------------------------------------------------*/
+
+h1 {
+	font-family: "gotham_book", helvetica, arial, sans-serif;
+	padding:0px;
+	margin:0px 0 10px 0;
+	font-size:36px;
+	color:#72CCCC;
+	text-shadow: 1px 1px 2px #FFF;
+	text-transform: uppercase; 
+	
+}
+
+h2 {
+	font-family: "gotham_bold", helvetica, arial, sans-serif;
+	padding:0px;
+	margin:5px 0 5px 0;
+	font-size:16px;
+	color:#888;
+	text-shadow: 1px 2px 2px #FFF;
+	text-transform: uppercase; 
+	
+}
+
+
+.stats{
+	font-size:11px;
+	color:#FFF;	
+	text-shadow: 1px 2px 1px #888;
+	margin-top:44px;
+	
+}
+
+.figure:before{
+	content:"#";
+	color:#72CCCC;
+	text-shadow: 1px 2px 1px #888;
+	font-size:20px;
+	
+	
+	}
+	
+.figure{
+	content:"#";
+	color:#FFF;
+	text-shadow: 1px 2px 1px #888;
+	font-size:18px;
+	margin-top:8px
+	
+	}
+
+
+
+
+/* 4=Links
+-----------------------------------------------------------------------------*/
+a {
+	color:#393F46;
+	text-decoration: none;
+	font-weight:bold;
+}
+a:hover {
+	color:#D3274F;
+}
+
+
+
+/* 5=Layout General 
+-----------------------------------------------------------------------------*/
+
+.container {
+	width:970px;
+	margin:0 auto;
+	padding:0;
+}
+
+.bar{
+	width:970px;
+	float:left;	
+	padding:5px 0 0 0;
+	margin:0;
+}
+
+
+
+/* 6=Branding
+-----------------------------------------------------------------------------*/
+
+.logo {
+	float:left;
+	height:160px;
+	width:300px;
+	margin-right:250px;
+	
+	}
+	
+.atten {
+	float:left;
+	height:140px;
+	width:140px;
+	background: url("atten.png") no-repeat;
+	margin:25px 5px 0px 10px;
+	text-align:center;
+	
+	}
+	
+.drinks{
+	float:left;
+	height:140px;
+	width:140px;
+	margin:25px 10px 0px 5px;
+	background: url("drinks.png") no-repeat;
+	text-align:center;
+	
+	}
+
+.vert-divider{
+	float:left;
+	height:105px;
+	width:3px;
+	margin:20px 10px 0px 10px;
+	background: url("vert-divider.png") no-repeat;
+	}
+
+nav.social {
+	float:right;
+	width:40px;
+	padding-top:15px;
+}
+
+nav.social a {
+	float:left;
+	margin:5px;
+}
+
+
+
+
+
+
+/* 9=Header
+-----------------------------------------------------------------------------*/
+.header {
+	height:184px;
+	width:100%;
+	background: url("head_bg.jpg") repeat-x;
+}
+/* 10=Main Content
+-----------------------------------------------------------------------------*/
+ .main{
+	display: inline-block;
+}
+
+.main {
+	height:100%;
+	width:100%;
+	min-height:310px;
+	padding:20px 0;
+	margin:0;
+	background: url("main_bg.jpg");
+}
+.main:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	font-size:0;
+	visibility:hidden;
+}
+
+.main .details{
+	float:left;
+	width:500px;
+	padding-right:60px;
+	border-right:2px dotted #F6F6F6;
+}
+
+.main .details .copy {
+	padding-bottom:20px;
+	border-bottom:2px dotted #F6F6F6;
+	margin-bottom:20px;
+	text-shadow: 1px 1px 1px #FFF;
+	
+}
+
+.main .reg-btn{
+	float:left;
+	width:440px
+	height:75px;
+}
+
+.main .mail-btn{
+	float:left;
+	width:110px
+	height:75px;
+}
+
+.main ul{
+	padding-top:15px;
+	font-size:11px;
+}
+.main ul li.address{
+	background: url("pin.png") no-repeat;
+	padding:3px 0px 3px 20px;
+}
+
+
+
+a{
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+
+
+
+
+a:hover{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+
+.main .location{
+	float:right;
+	width:330px;
+	height:210px;
+	margin:3px;
+	background: url("map_bg.png") no-repeat;
+	padding:6px 5px 5px 5px;
+}
+
+.bottom {
+	display: inline-block;
+}
+
+.bottom {
+	width:100%;
+	min-height:184px;
+	margin:0;
+	background: url("bottom_bg.jpg");
+}
+
+.bottom:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	font-size:0;
+	visibility:hidden;
+}
+
+.bottom nav{
+	float:right;
+	font-size:11px;
+	padding:30px 0;
+	font-family: "gotham_bold", helvetica, arial, sans-serif;
+}
+
+.bottom nav a{
+  color:#FFF;
+  text-shadow: 1px 2px 1px #888;
+
+}
+
+.bottom nav li.twitter{
+	float:left;
+	background: url("twitter.png") no-repeat;
+	padding:10px 10px 10px 40px;
+}
+
+.bottom nav li.group{
+	float:left;
+	background: url("group.png") no-repeat;
+	padding:10px 10px 10px 40px;
+}
+
+.bottom nav li.fb{
+	float:left;
+	background: url("fb.png") no-repeat;
+	padding:10px 10px 10px 40px;
+}
+
+
+
+
+
+
+
+@font-face {
+	font-family: "gotham_book";
+	src: url(Gotham-Book.otf); /* IE */
+	src: local("gotham_book"), url(Gotham-Book.otf) format('opentype'); /* non-IE */
+}
+
+@font-face {
+	font-family: "gotham_bold";
+	src: url(Gotham-Bold.otf); /* IE */
+	src: local("gotham_bold"), url(Gotham-Bold.otf) format('opentype'); /* non-IE */
+}
