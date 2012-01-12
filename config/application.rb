@@ -46,7 +46,6 @@ module Refresh
 
     # Don't initialize Rails when precompiling assets (faster)
     config.assets.initialize_on_precompile = false
-    config.assets.precompile << "locales/*.js"
     config.assets.precompile += %w(rails_admin/rails_admin.js rails_admin/rails_admin.css)
   end
 end
