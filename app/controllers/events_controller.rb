@@ -1,9 +1,17 @@
 class EventsController < ApplicationController
   def index
     @event = Event.first
-    @atten = @event.attendence unless @event.attendence.nil?
-    @drinks = @event.drinks unless @event.drinks.nil?
-    
+    if @event.attendence.nil?
+      @atten = "?"
+    else
+      @atten = @event.attendence
+    end
+      
+    if @event.drinks.nil?
+      @drinks = "?"
+    else
+      @drinks = @event.drinks
+      
   end
 
 end
