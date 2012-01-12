@@ -107,13 +107,23 @@ h2 {
 	
 }
 
+h2.event:before{
+	content:"Next Event : ";
+	
+	font-family: "gotham_bold", helvetica, arial, sans-serif;
+	padding:0px;
+	margin:5px 0 5px 0;
+	font-size:16px;
+	color:#595059;
+	text-shadow: 1px 2px 2px #FFF;
+	text-transform: uppercase;
+	}
+
 .figure:before{
 	content:"#";
 	color:#72CCCC;
 	text-shadow: 1px 2px 1px #888;
 	font-size:20px;
-	
-	
 	}
 	
 .figure{
@@ -311,7 +321,7 @@ a:hover{
 
 .bottom {
 	width:100%;
-	min-height:184px;
+	min-height:100px;
 	margin:0;
 	background: url("bottom_bg.jpg");
 }

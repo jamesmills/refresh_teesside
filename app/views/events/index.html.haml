@@ -1,5 +1,5 @@
 .details
-  %h2= time_tag(@event.event_date)
+  %h2.event= time_tag(@event.event_date)
   %h1= @event.title
   .copy
     %p=simple_format h(@event.body) 
