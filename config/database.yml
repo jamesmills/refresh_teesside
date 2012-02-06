@@ -2,6 +2,6 @@ development:
   adapter: postgresql
   database: refresh_development
   username: postgres
-  password: 
+  password: chris
   host: localhost
   port: 5432

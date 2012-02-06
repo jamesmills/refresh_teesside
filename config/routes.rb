@@ -55,6 +55,15 @@ Refresh::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'events#index'
+  match 'facebook' => 'events#facebook'
+  match 'google-group' => 'events#google', :as => "google"
+  match 'linkedin' => 'events#linkedin'
+  match 'twitter' => 'events#twitter'
+  match 'lastfm' => 'events#lastfm'
+  match 'flickr' => 'events#flickr'
+  
+  
+  
 
 
 

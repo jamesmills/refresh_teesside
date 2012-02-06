@@ -18,15 +18,15 @@
           %h2.figure= @drinks
         .vert-divider
         %nav.social
-          =link_to image_tag("group.png", :title => "Forum"), "http://groups.google.com/group/refresh-teesside", :target => "_blank"
-          =link_to image_tag("twitter.png", :title => "Twitter"), "https://twitter.com/#!/refreshteesside", :target => "_blank"
-          =link_to image_tag("fb.png", :title => "Facebook"), "https://www.facebook.com/refreshteesside", :target => "_blank"
+          =link_to image_tag("group.png", :title => "Forum"), google_path, :target => "_blank"
+          =link_to image_tag("twitter.png", :title => "Twitter"), twitter_path, :target => "_blank"
+          =link_to image_tag("fb.png", :title => "Facebook"), facebook_path, :target => "_blank"
     .main
       .container
         = yield 
     .bottom
       .container
         %nav
-          %li.group= link_to"Refresh Forum", "http://groups.google.com/group/refresh-teesside", :target => "_blank"
-          %li.twitter= link_to "Follow Refresh", "https://twitter.com/#!/refreshteesside", :target => "_blank"
-          %li.fb= link_to "Facebook Group", "https://twitter.com/#!/refreshteesside", :target => "_blank"
+          %li.group= link_to"Refresh Forum", google_path, :target => "_blank"
+          %li.twitter= link_to "Follow Refresh", twitter_path, :target => "_blank"
+          %li.fb= link_to "Facebook Group", facebook_path, :target => "_blank"
