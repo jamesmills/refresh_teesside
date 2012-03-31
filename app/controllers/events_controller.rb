@@ -1,8 +1,14 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.last
-    @atten = @event.attendence
-    @drinks = @event.drinks  
+    @event = Event.last 
+    @atten = @event.prev.attendence
+    @drinks = @event.prev.drinks  
+  end
+  
+  def show
+    @event = Event.find(params[:id])
+    @atten = @event.prev.attendence
+    @drinks = @event.prev.drinks
   end
   
   def facebook

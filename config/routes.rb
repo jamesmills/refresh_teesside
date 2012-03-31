@@ -61,6 +61,7 @@ Refresh::Application.routes.draw do
   match 'twitter' => 'events#twitter'
   match 'lastfm' => 'events#lastfm'
   match 'flickr' => 'events#flickr'
+  resources :events
   
   
   

@@ -27,6 +27,8 @@ author:    Christopher Scott
 
 */
 
+
+
 /* 1=General
 -----------------------------------------------------------------------------*/
 * {
@@ -47,9 +49,10 @@ html {
 }
 body {
 	margin:0 auto;
-    background: url("bg.jpg");
+  background: url("bg.jpg");
 	background-color:#393F46;
 	padding:0;
+	
 }
 ul {
 	list-style-type: none;
@@ -64,13 +67,26 @@ ol {
 li {
 	list-style:none;
 }
+
+.cf {
+  zoom: 1;
+	&:before,
+  &:after {
+    display: table;
+    content: "";
+    zoom: 1;
+	}
+	&:after {
+    clear: both;
+	}
+}
 /* 2=Typography
 -----------------------------------------------------------------------------*/
 
 body {
 	font-size:14px;
-	font-family: "gotham_book", Courier, monospace;
 	color:#595059;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 /* 3=Headings
@@ -157,7 +173,8 @@ a:hover {
 .container {
 	width:970px;
 	margin:0 auto;
-	padding:0;
+	padding:0 50px;
+	position:relative;
 }
 
 .bar{
@@ -286,8 +303,13 @@ nav.social a {
 }
 .main ul li.address{
 	background: url("pin.png") no-repeat;
-	padding:3px 0px 3px 20px;
+	padding:3px 0px 3px 40px;
 }
+
+.main ul li.twitter{
+	background: url("twitter.png") no-repeat;
+	padding:10px 0px 10px 40px;
+	}
 
 
 
@@ -368,9 +390,14 @@ a:hover{
 
 
 
-
-
-
+@font-face{ 
+  font-family: 'WebSymbolsRegular';
+  src: url('websymbols-regular-webfont.eot');
+  src: url('websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('websymbols-regular-webfont.woff') format('woff'),
+       url('websymbols-regular-webfont.ttf') format('truetype'),
+       url('websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+  }
 
 @font-face {
 	font-family: "gotham_book";
@@ -383,3 +410,29 @@ a:hover{
 	src: url(Gotham-Bold.otf); /* IE */
 	src: local("gotham_bold"), url(Gotham-Bold.otf) format('opentype'); /* non-IE */
 }
+
+.prev{
+	position:absolute;
+	left:35px;
+	top:28px;
+}
+
+.next{
+	position:absolute;
+	right:-10px;
+	top:28px;
+}
+
+.icon-before{
+	margin:-35px;
+  
+}
+.icon-before:before {
+	font-family: 'WebSymbolsRegular';
+  content: attr(data-icon);
+  font-size:35px;
+  height:35px;
+  width:35px:
+  display:block;
+}
+

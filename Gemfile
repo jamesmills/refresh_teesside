@@ -5,6 +5,8 @@ gem 'heroku'
 gem 'pg', :require => 'pg'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'haml'
+# gem "friendly_id", "~> 4.0.1"
+
 
 
 

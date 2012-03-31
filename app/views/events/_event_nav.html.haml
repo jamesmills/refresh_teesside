@@ -1,0 +1,3 @@
+.next= link_to "", event_path(@event.next), :class => "icon-before", :data => {"icon" => '>'} unless @event == Event.last
+.prev= link_to "", event_path(@event.prev), :class => "icon-before", :data => {"icon" => '<'} unless @event == Event.first
+
