@@ -1,33 +1,106 @@
-!!!
-%html
+!!! 5
+%html{:lang => "en"}
   %head
-    %title Refresh Teesside
-    = stylesheet_link_tag 'application'
-    =render :partial => 'layouts/analytics'
-    
+    %meta{:charset => "utf-8"}/
+    %title= content_for?(:title) ? yield(:title) : "Refresh"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    / Le styles
+    = stylesheet_link_tag "application", :media => "all"
+    / Le fav and touch icons
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+
+
   %body
-    .header
-      .container.cf
-        .logo
-          =image_tag("logo.png")
-        .vert-divider
-        .atten
-          %h2.stats Last Attendance
-          %h2.figure= @atten
-        .drinks
-          %h2.stats Last Beverages 
-          %h2.figure= @drinks
-        .vert-divider
-        %nav.social
-          =link_to image_tag("group.png", :title => "Forum"), google_path, :target => "_blank"
-          =link_to image_tag("twitter.png", :title => "Twitter"), twitter_path, :target => "_blank"
-          =link_to image_tag("fb.png", :title => "Facebook"), facebook_path, :target => "_blank"
-    .main
-      .container.cf
-        = yield 
-    .bottom
-      .container.cf
-        %nav
-          %li.group= link_to"Refresh Forum", google_path, :target => "_blank"
-          %li.twitter= link_to "Follow Refresh", twitter_path, :target => "_blank"
-          %li.fb= link_to "Facebook Group", facebook_path, :target => "_blank"
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .nav-collapse
+            %ul.nav
+              %li= link_to "Events", "#event"
+              %li= link_to "Location", "#location"
+              %li= link_to "About", "#about"
+          
+          =link_to image_tag("RefreshTeeside.png"),"#",:class => "brand"
+          / 
+          / %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+          /   %span.icon-bar
+          /   %span.icon-bar
+          /   %span.icon-bar
+
+    .container{:id => "event"}
+      .label
+        %h1 Events
+      .content
+        .row
+          .span4.mbl.mtl.pbl
+            %h1.mbm Title
+            %h2{:class => "datey icon-calendar icon-large", "data-datey" => "6:00pm"}
+              17
+              %sup th 
+              September 2012, 
+            %p.mtl
+              Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          .span3.offset1.mbl.mtl.pbl
+            %h1{:class =>"icon-time icon-large"} Schedule
+            .small Don't miss a minute,
+            
+            %ul.unstyled.mtl
+              %li{:class => "schedule", "data-time" => "6:00pm"}= "Registration" 
+              %li{:class => "schedule", "data-time" => "6:30pm"}= "Welcome" 
+              %li{:class => "schedule", "data-time" => "7:00pm"}= "Networking" 
+              %li{:class => "schedule", "data-time" => "7:30pm"}= "spotlight" 
+              %li{:class => "schedule", "data-time" => "8:00pm"}= "food" 
+              %li{:class => "schedule", "data-time" => "8:30pm"}= "prize draw" 
+              %li{:class => "schedule", "data-time" => "9:00pm"}= "networking" 
+              
+
+          .span3.offset1.mbl.mtl.pbl
+            %h1{:class =>"icon-bar-chart icon-large"} Stats
+            .small We love stats, last months there was, 
+            .big-stat
+              190
+              %span Attendees
+            .big-stat
+              80
+              %span Beverages
+ 
+            
+    .dark-bar
+      .inner
+        .container{:id => "location"}
+          .label
+            %h1 Location
+          .content.mbl
+            .row
+              .span5.offset1
+                = yield
+              .span5
+                %ul.icons
+                  %li.icon-map-marker.icon-large Capaldi’s, 56 Linthorpe Road, Middlesbrough, TS1 3RB
+                  %li.icon-phone.icon-large  00000 000000
+                  %li.icon-twitter.icon-large  @eatcapaldis
+ 
+                %p.mtl Lorem ipsum dolor sit amet Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
+                
+    .light-bar
+      .inner
+        .container{:id => "about"}
+          .label
+            %h1 About
+          .content.mbl
+            .row
+              .span5.offset1
+                %p.mbl 
+                  Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+              .span5
+                %p 
+                  Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+            
+
+    = javascript_include_tag "application"

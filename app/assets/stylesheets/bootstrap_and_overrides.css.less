@@ -1,0 +1,492 @@
+/*-----------------------------------------------------------------------------
+Refresh Style Sheet
+
+version:   2.0
+author:    Christopher Scott
+
+
+/* TOC
+-----------------------------------------------------------------------------
+
+1  - Imports
+2  - Base
+3  - Typography
+5  - Layout - General 
+6  - Branding
+7  - Main Navigation
+8  - Sub Navigation
+9  - Layout - Header
+10 - Layout - Main Content
+11 - Layout - Footer
+12 - Media
+
+/* 1 Imports ---------------------------------------*/
+
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+@fontAwesomeEotPath:  'fontawesome-webfont.eot';
+@fontAwesomeWoffPath: 'fontawesome-webfont.woff';
+@fontAwesomeTtfPath:  'fontawesome-webfont.ttf';
+@fontAwesomeSvgzPath: 'fontawesome-webfont.svgz';
+@fontAwesomeSvgPath:  'fontawesome-webfont.svg';
+@import "fontawesome";
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+/* End Imports -------------------------------------*/
+
+.font-size (@font-size: 14) {
+	@rem: (@font-size / 16);
+	font-size: @font-size * 1px;
+	font-size: ~"@{rem}rem";
+}
+
+.pan {padding: 0;}
+.pas {padding: 5px;}
+.pam {padding: 10px;}
+.pal {padding: 20px;}
+.paxl {padding: 40px;}
+
+.ptn {padding-top: 0px;}
+.pts {padding-top: 5px;}
+.ptm {padding-top: 10px;}
+.ptl {padding-top: 20px;}
+
+.prn {padding-right: 0px;}
+.prs {padding-right: 5px;}
+.prm {padding-right: 10px;}
+.prl {padding-right: 20px;}
+
+.pbn {padding-bottom: 0px;}
+.pbs {padding-bottom: 5px;}
+.pbm {padding-bottom: 10px;}
+.pbl {padding-bottom: 20px;}
+
+.pln {padding-left: 0px;}
+.pls {padding-left: 5px;}
+.plm {padding-left: 10px;}
+.pll {padding-left: 20px;}
+.plxl {padding-left: 40px;}
+
+.phn {padding-left: 0px; padding-right: 0px;}
+.phs {padding-left: 5px; padding-right: 5px;}
+.phm {padding-left: 10px; padding-right: 10px;}
+.phl {padding-left: 20px; padding-right: 20px;}
+
+.pvn {padding-top: 0px; padding-bottom: 0px;}
+.pvs {padding-top: 5px; padding-bottom: 5px;}
+.pvm {padding-top: 10px; padding-bottom: 10px;}
+.pvl {padding-top: 20px; padding-bottom: 20px;}
+.pvxl {padding-top: 100px; padding-bottom: 100px;}
+
+.man {margin: 0;}
+.mas {margin: 5px;}
+.mam {margin: 10px;}
+.mal {margin: 20px;}
+
+.mtn {margin-top: 0px;}
+.mts {margin-top: 5px;}
+.mtm {margin-top: 10px;}
+.mtl {margin-top: 20px;}
+
+.mrn {margin-right: 0px;}
+.mrs {margin-right: 5px;}
+.mrm {margin-right: 10px;}
+.mrl {margin-right: 20px;}
+
+.mbn {margin-bottom: 0px;}
+.mbs {margin-bottom: 5px;}
+.mbm {margin-bottom: 10px;}
+.mbl {margin-bottom: 20px;}
+
+.mln {margin-left: 0px;}
+.mls {margin-left: 5px;}
+.mlm {margin-left: 10px;}
+.mll {margin-left: 20px;}
+
+.mhn {margin-left: 0px; padding-right: 0px;}
+.mhs {margin-left: 5px; padding-right: 5px;}
+.mhm {margin-left: 10px; padding-right: 10px;}
+.mhl {margin-left: 20px; padding-right: 20px;}
+
+.mvn {margin-top: 0px; padding-bottom: 0px;}
+.mvs {margin-top: 5px; padding-bottom: 5px;}
+.mvm {margin-top: 10px; padding-bottom: 10px;}
+.mvl {margin-top: 20px; padding-bottom: 20px;}
+
+/* 2 Base ----------------------------------------- */
+
+body {
+	background: #FFF url("main_bg.png") repeat;
+	color:@common;
+}
+
+p{
+	.font-size(14);
+	color:@common;
+	text-shadow: 1px 1px 0px #FFF;	
+}
+
+iframe{
+	display:block;
+}
+
+
+
+h1{
+	.fs2;
+	.font-size(18);
+	color:@common;
+	margin-bottom:15px;
+	text-shadow: 1px 2px 0px #FFF;
+	line-height:1;
+	font-weight:normal;	
+	
+}
+
+
+
+h2{
+	.font-size(15);
+	color:@calmly;
+	margin-bottom:15px;
+	margin-top:15px;
+	text-shadow: 1px 2px 0px #FFF;
+	font-weight:normal;	
+	text-transform:uppercase;
+	
+}
+
+.small{
+	display:block;
+	.font-size(13);
+	color:@light-common
+}
+
+/* End Base ----------------------------------------*/
+
+/* 3 Typography ----------------------------------- */
+
+@font-face {
+    font-family: 'DemingEPRegular';
+    src: url('deming_ep-webfont.eot');
+    src: url('deming_ep-webfont.eot?#iefix') format('embedded-opentype'),
+         url('deming_ep-webfont.woff') format('woff'),
+         url('deming_ep-webfont.ttf') format('truetype'),
+         url('deming_ep-webfont.svg#DemingEPRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BevanRegular';
+    src: url('Bevan-webfont.eot');
+    src: url('Bevan-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Bevan-webfont.woff') format('woff'),
+         url('Bevan-webfont.ttf') format('truetype'),
+         url('Bevan-webfont.svg#BevanRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CubanoRegular';
+    src: url('cubano-regular-webfont.eot');
+    src: url('cubano-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('cubano-regular-webfont.woff') format('woff'),
+         url('cubano-regular-webfont.ttf') format('truetype'),
+         url('cubano-regular-webfont.svg#CubanoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.fs1 {
+	font-family: 'BevanRegular';
+}
+
+.fs2 {
+	font-family: 'DemingEPRegular';
+}
+
+.fs3{
+	font-family: 'CubanoRegular';
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+	padding-right:10px;
+}
+
+/* End Typography -------------------------------- */
+
+.container{
+	padding-top:130px;
+	padding-bottom:50px;
+}
+
+.navbar-inner{
+	height:160px;
+	background: url("head_bg.png") repeat-x;
+	.box-shadow(none)	
+}
+
+.navbar-inner .brand{
+	margin: 0 auto;
+	width:327px;
+	float:none;
+	padding-top:0px;
+}
+
+
+.navbar .nav > li > a {
+	.fs2;
+	.font-size(12);
+	border-bottom:1px @calmly dotted;
+	color:#FFF;
+	margin-right:20px;
+	line-height:1;
+	padding:70px 0 5px 0;
+}
+
+.navbar-inner .container{
+	
+	padding-top:0px;
+}
+
+.dark-bar .inner{
+  background:#595059;
+}
+
+
+.light-bar .inner{
+  background:#ACC7C7 url("light-bar.png");
+  padding-bottom:300px;
+}
+
+
+.dark-bar p{
+	.font-size(14);
+	color:#fff;
+	text-shadow: 1px 2px 0px #000;	
+}
+
+.dark-bar ul{
+	.font-size(13);
+	color:#fff;
+	text-shadow: 1px 2px 0px #000;	
+}
+
+.dark-bar ul li{
+	.font-size(13);
+	color:#fff;
+	text-shadow: 1px 2px 0px #000;	
+	margin-bottom:5px;
+	
+}
+
+
+
+
+.label{
+	background: url("label.png") no-repeat 0 0 ;
+	width:300px;
+	height:50px;
+	line-height:50px;
+	margin: 30px auto;
+	text-align:center;
+	padding-bottom:20px;
+}
+
+.label h1{
+	margin:0;
+	padding:0;
+	color:black;
+	line-height:50px;
+	.font-size(18);
+	color:@common;
+	font-weight:normal
+}
+
+ul{
+	display:block;
+	margin:0 auto;
+}
+
+li.schedule {
+	color:@med-common;
+	.fs3;
+	.font-size(16);
+	font-weight:normal;
+	margin-bottom:8px;
+	text-transform:lowercase;	
+	text-shadow: 1px 2px 0px #FFF;
+}
+
+li.schedule:before {
+  content: attr(data-time);
+  padding-right:50px;
+  color:@calmly;
+}
+
+@common:#595059;
+@light-common:#B0A5B0;
+@med-common:#716672; 
+@calmly:#ACC6C6;
+
+
+.big-stat {
+  .font-size(95);
+  color: @calmly;
+  margin-left:0px;
+  .fs1;
+  line-height: 1;
+  text-shadow: 1px 2px 0px #FFF;
+  display:block;
+	
+}
+
+.big-stat > span {
+  margin-left:0px;
+  text-transform: uppercase;
+  color: @common;
+  .fs3;
+  .font-size(14);
+  text-shadow: 1px 2px 0px #FFF;
+  display:block;
+	
+}
+
+.datey{
+  .fs3;
+  .font-size(17);
+  text-shadow: 1px 2px 0px #FFF;
+  font-weight:normal;
+  
+}
+
+.datey:after {
+  content: attr(data-datey);
+  padding-left:10px;
+  color:@med-common;
+  text-shadow: 1px 2px 0px #FFF;
+  
+
+}
+
+.location{
+  display:block;
+	margin:3px;
+	background: url("map_bg.png");
+	padding:6px 5px 5px 5px;
+}
+
+/* 12 Media ----------------------------------------- */
+
+
+// Tablet
+
+@media (max-width: 767px) {
+    
+    .dark-bar, .light-bar {
+        height: auto;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    
+    .dark-bar .inner, .light-bar .inner {
+        padding: 0 20px;
+    }
+    
+    .container, .dark-bar .container, .light-bar .container {
+        padding-top: 15px;
+    }
+
+  .container {
+	padding-top:0px;
+}
+    
+}
+
+// Desktop
+
+@media (max-width: 979px) {
+	
+		body {
+	    padding-top: 0;
+	  }
+
+    .navbar-fixed-top .navbar-inner {
+        padding: 0 10px;
+        border-top:1px solid #595059;
+    }
+    
+    .navbar .brand {
+        top: 0;
+    }
+    
+    .navbar .btn-navbar {
+       margin:5px;
+     
+    }
+    
+    .navbar .nav > li > a:hover {
+        color: #FFF;
+    }
+
+
+		.big-stat {
+		  .font-size(90);
+		  color: @calmly;
+		  margin: 0 30px 20px 0;
+		  .fs1;
+		  line-height: 1;
+		  text-shadow: 1px 2px 0px #FFF;
+		  display:inline-block;
+		}
+
+		.big-stat > span {
+		  display:block;
+		  margin-left:0;
+		  text-transform: uppercase;
+		  color: @common;
+		  .fs3;
+		  .font-size(14);
+		  text-shadow: 1px 2px 0px #FFF;
+
+		}
+		
+		li.schedule {
+			color:@light-common;
+			.fs3;
+			.font-size(16);
+			font-weight:normal;
+			margin-bottom:8px;
+			text-transform:lowercase;	
+			text-shadow: 1px 2px 0px #FFF;
+		}
+
+		li.schedule:before {
+		  content: attr(data-time);
+		  padding-right:20px;
+		  color:@calmly;
+		}
+		
+		[class^="icon-"]::before, [class*=" icon-"]::before {
+			padding-right:2px;
+		}
+		
+		h1{
+			.fs2;
+			.font-size(15);
+			color:@common;
+			margin-bottom:15px;
+			text-shadow: 1px 2px 0px #FFF;
+			line-height:1;	
+
+		}
+    
+}
+
+/* 12 Media ----------------------------------------- */
+
+

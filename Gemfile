@@ -6,13 +6,12 @@ gem 'pg', :require => 'pg'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'haml'
 
-
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'less'
+  gem 'twitter-bootstrap-rails'
+  
   gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
 end

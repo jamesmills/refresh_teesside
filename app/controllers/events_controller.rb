@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.last 
+    @event = Event.first
     @atten = @event.prev.attendence
     @drinks = @event.prev.drinks  
   end

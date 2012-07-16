@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title Refresh Teesside
+    = stylesheet_link_tag 'application'
+    =render :partial => 'layouts/analytics'
+    
+  %body
+    .header
+      .container.cf
+        .logo
+          =image_tag("logo.png")
+        .vert-divider
+        .atten
+          %h2.stats Last Attendance
+          %h2.figure= @atten
+        .drinks
+          %h2.stats Last Beverages 
+          %h2.figure= @drinks
+        .vert-divider
+        %nav.social
+          =link_to image_tag("group.png", :title => "Forum"), google_path, :target => "_blank"
+          =link_to image_tag("twitter.png", :title => "Twitter"), twitter_path, :target => "_blank"
+          =link_to image_tag("fb.png", :title => "Facebook"), facebook_path, :target => "_blank"
+    .main
+      .container.cf
+        = yield 
+    .bottom
+      .container.cf
+        %nav
+          %li.group= link_to"Refresh Forum", google_path, :target => "_blank"
+          %li.twitter= link_to "Follow Refresh", twitter_path, :target => "_blank"
+          %li.fb= link_to "Facebook Group", facebook_path, :target => "_blank"

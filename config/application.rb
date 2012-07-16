@@ -31,6 +31,10 @@ module Refresh
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    
+    config.generators do |g|
+      g.template_engine :haml
+    end
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.

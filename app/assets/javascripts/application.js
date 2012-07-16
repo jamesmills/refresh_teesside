@@ -6,4 +6,37 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
+
+
+
+$(document).ready(function(){
+	
+	$('ul li a').click(function(){
+	
+		var el = $(this).attr('href');
+		var elWrapped = $(el);
+		
+		scrollToDiv(elWrapped, 20);
+		
+		return false;
+	
+	});
+	
+	function scrollToDiv(element,navheight){
+	
+		
+		var offset = element.offset();
+		var offsetTop = offset.top;
+		var totalScroll = offsetTop-navheight;
+		
+		$('body,html').animate({
+				scrollTop: totalScroll
+		}, 500);
+	
+	}
+	
+	
+	
+});
