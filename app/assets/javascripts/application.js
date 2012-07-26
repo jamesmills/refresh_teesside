@@ -18,7 +18,7 @@ $(document).ready(function(){
 		var el = $(this).attr('href');
 		var elWrapped = $(el);
 		
-		scrollToDiv(elWrapped, 20);
+		scrollToDiv(elWrapped, 0);
 		
 		return false;
 	

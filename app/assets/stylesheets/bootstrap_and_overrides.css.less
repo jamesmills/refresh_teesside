@@ -9,16 +9,12 @@ author:    Christopher Scott
 -----------------------------------------------------------------------------
 
 1  - Imports
-2  - Base
-3  - Typography
-5  - Layout - General 
-6  - Branding
-7  - Main Navigation
-8  - Sub Navigation
-9  - Layout - Header
-10 - Layout - Main Content
-11 - Layout - Footer
-12 - Media
+2  - Mixin, Variables and Fancy Stuff
+3  - Colours
+4  - Typography 
+5  - Base Overrides
+6  - Custom Overrides
+7  - Media
 
 /* 1 Imports ---------------------------------------*/
 
@@ -34,6 +30,8 @@ author:    Christopher Scott
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
 /* End Imports -------------------------------------*/
+
+/* 2 Mixin, Variables and Fancy Stuff ----------------*/
 
 .font-size (@font-size: 14) {
 	@rem: (@font-size / 16);
@@ -114,58 +112,19 @@ author:    Christopher Scott
 .mvm {margin-top: 10px; padding-bottom: 10px;}
 .mvl {margin-top: 20px; padding-bottom: 20px;}
 
-/* 2 Base ----------------------------------------- */
+/* End ----------------------------------------- */
 
-body {
-	background: #FFF url("main_bg.png") repeat;
-	color:@common;
-}
+/* 3 Colours ----------------------------------- */
 
-p{
-	.font-size(14);
-	color:@common;
-	text-shadow: 1px 1px 0px #FFF;	
-}
+@common:#595059;
+@light-common:#B0A5B0;
+@med-common:#716672; 
+@calmly:#ACC6C6;
 
-iframe{
-	display:block;
-}
+/* End ------------------------------------------ */
 
 
-
-h1{
-	.fs2;
-	.font-size(18);
-	color:@common;
-	margin-bottom:15px;
-	text-shadow: 1px 2px 0px #FFF;
-	line-height:1;
-	font-weight:normal;	
-	
-}
-
-
-
-h2{
-	.font-size(15);
-	color:@calmly;
-	margin-bottom:15px;
-	margin-top:15px;
-	text-shadow: 1px 2px 0px #FFF;
-	font-weight:normal;	
-	text-transform:uppercase;
-	
-}
-
-.small{
-	display:block;
-	.font-size(13);
-	color:@light-common
-}
-
-/* End Base ----------------------------------------*/
-
-/* 3 Typography ----------------------------------- */
+/* 4 Typography ----------------------------------- */
 
 @font-face {
     font-family: 'DemingEPRegular';
@@ -219,9 +178,70 @@ h2{
 
 /* End Typography -------------------------------- */
 
+/* 5 Base Overrides ----------------------------------------- */
+
+body {
+	background: #FFF url("main_bg.png") repeat;
+	color:@common;
+}
+
+p{
+	.font-size(15);
+	color:@common;
+	text-shadow: 1px 1px 0px #FFF;	
+}
+
+iframe{
+	display:block;
+}
+
+
+h1{
+	.fs2;
+	.font-size(18);
+	color:@common;
+	margin-bottom:15px;
+	text-shadow: 1px 2px 0px #FFF;
+	line-height:1;
+	font-weight:normal;	
+}
+
+h2{
+	.font-size(15);
+	color:@calmly;
+	margin-bottom:15px;
+	margin-top:15px;
+	text-shadow: 1px 2px 0px #FFF;
+	font-weight:normal;	
+	text-transform:uppercase;
+	
+}
+
+.small{
+	display:block;
+	.font-size(13);
+	color:@common
+}
+
+a{
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+
+a:hover{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+
+/* End Base ----------------------------------------*/
+
+/* 6 Custom Overrides ------------------------------ */
+
 .container{
-	padding-top:130px;
-	padding-bottom:50px;
+	padding-top:140px;
+	padding-bottom:60px;
 }
 
 .navbar-inner{
@@ -231,25 +251,42 @@ h2{
 }
 
 .navbar-inner .brand{
-	margin: 0 auto;
-	width:327px;
+	width:314px;
+	position:absolute;
+	left:50%;
+	margin-left:-157px;
+	top:0;
+	padding:0px;
 	float:none;
-	padding-top:0px;
+}
+
+nav.social {
+	float:right;
+	width:40px;
+	padding-top:5px;
+}
+
+nav.social a {
+	float:left;
+	margin:5px;
 }
 
 
 .navbar .nav > li > a {
 	.fs2;
 	.font-size(12);
-	border-bottom:1px @calmly dotted;
+	border-bottom:2px @calmly dotted;
 	color:#FFF;
-	margin-right:20px;
+	margin-right:15px;
 	line-height:1;
 	padding:70px 0 5px 0;
 }
 
+.navbar .nav > li:last-child > a {
+  margin-right:0;
+}
+
 .navbar-inner .container{
-	
 	padding-top:0px;
 }
 
@@ -262,7 +299,6 @@ h2{
   background:#ACC7C7 url("light-bar.png");
   padding-bottom:300px;
 }
-
 
 .dark-bar p{
 	.font-size(14);
@@ -281,10 +317,7 @@ h2{
 	color:#fff;
 	text-shadow: 1px 2px 0px #000;	
 	margin-bottom:5px;
-	
 }
-
-
 
 
 .label{
@@ -313,7 +346,7 @@ ul{
 }
 
 li.schedule {
-	color:@med-common;
+	color:@common;
 	.fs3;
 	.font-size(16);
 	font-weight:normal;
@@ -328,11 +361,6 @@ li.schedule:before {
   color:@calmly;
 }
 
-@common:#595059;
-@light-common:#B0A5B0;
-@med-common:#716672; 
-@calmly:#ACC6C6;
-
 
 .big-stat {
   .font-size(95);
@@ -342,7 +370,6 @@ li.schedule:before {
   line-height: 1;
   text-shadow: 1px 2px 0px #FFF;
   display:block;
-	
 }
 
 .big-stat > span {
@@ -352,8 +379,7 @@ li.schedule:before {
   .fs3;
   .font-size(14);
   text-shadow: 1px 2px 0px #FFF;
-  display:block;
-	
+  display:block;	
 }
 
 .datey{
@@ -361,16 +387,13 @@ li.schedule:before {
   .font-size(17);
   text-shadow: 1px 2px 0px #FFF;
   font-weight:normal;
-  
 }
 
 .datey:after {
   content: attr(data-datey);
-  padding-left:10px;
+  padding-left:25px;
   color:@med-common;
   text-shadow: 1px 2px 0px #FFF;
-  
-
 }
 
 .location{
@@ -380,12 +403,22 @@ li.schedule:before {
 	padding:6px 5px 5px 5px;
 }
 
-/* 12 Media ----------------------------------------- */
+/* End ---------------------------------------------- */
+
+/* 7 Media ----------------------------------------- */
 
 
 // Tablet
 
 @media (max-width: 767px) {
+	
+		body {
+	    padding-top: 0;
+	  }
+	
+	  .container {
+	    padding-top:0px;
+    }
     
     .dark-bar, .light-bar {
         height: auto;
@@ -400,11 +433,7 @@ li.schedule:before {
     .container, .dark-bar .container, .light-bar .container {
         padding-top: 15px;
     }
-
-  .container {
-	padding-top:0px;
-}
-    
+   
 }
 
 // Desktop
@@ -413,11 +442,14 @@ li.schedule:before {
 	
 		body {
 	    padding-top: 0;
-	  }
+	  }  
+	
+	  .container{ 
+	  	padding-top:0px;
+		}
 
     .navbar-fixed-top .navbar-inner {
         padding: 0 10px;
-        border-top:1px solid #595059;
     }
     
     .navbar .brand {
@@ -426,13 +458,11 @@ li.schedule:before {
     
     .navbar .btn-navbar {
        margin:5px;
-     
     }
     
     .navbar .nav > li > a:hover {
         color: #FFF;
     }
-
 
 		.big-stat {
 		  .font-size(90);
@@ -456,7 +486,7 @@ li.schedule:before {
 		}
 		
 		li.schedule {
-			color:@light-common;
+			color:@common;
 			.fs3;
 			.font-size(16);
 			font-weight:normal;
@@ -482,11 +512,6 @@ li.schedule:before {
 			margin-bottom:15px;
 			text-shadow: 1px 2px 0px #FFF;
 			line-height:1;	
-
 		}
-    
 }
-
-/* 12 Media ----------------------------------------- */
-
 

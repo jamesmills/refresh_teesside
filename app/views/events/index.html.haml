@@ -1,7 +1,49 @@
-.location
-  =raw(@event.location_map)
+=content_for :event do
+  .row
+    .span4.mbl.mtl.pbl
+      %h1.mbm= @event.title unless @event.title.nil?
+      %h2{:class => "datey icon-calendar icon-large", "data-datey" => "6:00pm"}
+        = time_tag(@event.event_date) unless @event.event_date.nil?
+      %p.mtl
+        =simple_format h(@event.body) unless @event.body.nil?
+      .reg-btn.mtl
+        = link_to image_tag("reg-btn.png", :title => "Registar Now"), @event.booking_url, :target => "_blank"
+    .span3.offset1.mbl.mtl.pbl
+      %h1{:class =>"icon-time icon-large"} Schedule
+      .small.mts Don't miss a minute,
+   
+      %ul.unstyled.mtl
+        %li{:class => "schedule", "data-time" => "6:00pm"}= "Registration" 
+        %li{:class => "schedule", "data-time" => "6:30pm"}= "Welcome" 
+        %li{:class => "schedule", "data-time" => "7:00pm"}= "Networking" 
+        %li{:class => "schedule", "data-time" => "7:30pm"}= "Spotlight" 
+        %li{:class => "schedule", "data-time" => "8:00pm"}= "Food" 
+        %li{:class => "schedule", "data-time" => "8:30pm"}= "Prize draw" 
+        %li{:class => "schedule", "data-time" => "9:00pm"}= "Networking" 
+     
 
+    .span3.offset1.mbl.mtl.pbl
+      %h1{:class =>"icon-bar-chart icon-large"} Stats
+      .small.mts Everybody loves a stats, 
+      .big-stat
+        = @atten
+        %span Attendees
+      .big-stat
+        = @drinks 
+        %span Beverages
+        
+= content_for :location do
+  .content.mbl
+    .row
+      .span5.offset1
+        .location.mbs
+          =raw(@event.location_map) unless @event.location_map.nil?
+      .span5
+        %ul.icons
+          %li.icon-map-marker.icon-large= @event.location_address unless @event.location_address.nil?
+          %li.icon-phone.icon-large= @event.location_phone unless @event.location_phone.nil?
+          %li.icon-twitter.icon-large= @event.location_twitter unless @event.location_twitter.nil?
 
-
+        %p.mtl Lorem ipsum dolor sit amet Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
     
 
