@@ -32,7 +32,7 @@
               =link_to image_tag("twitter.png", :title => "Twitter"), twitter_path, :target => "_blank"
               =link_to image_tag("fb.png", :title => "Facebook"), facebook_path, :target => "_blank"
     .container{:id => "event"}
-      -if controller_name == "sessions"
+      -if controller_name != "events"
         .label
           %h1 Admin
         .content
@@ -42,7 +42,7 @@
           %h1 Events
         .content
           = yield :event
-    -if controller_name != "sessions"
+    -if controller_name == "events"
     
       .dark-bar
         .inner
