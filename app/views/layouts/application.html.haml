@@ -32,36 +32,37 @@
               =link_to image_tag("twitter.png", :title => "Twitter"), twitter_path, :target => "_blank"
               =link_to image_tag("fb.png", :title => "Facebook"), facebook_path, :target => "_blank"
     .container{:id => "event"}
-      .label
-        %h1 Events
-      .content
-        = yield :event
- 
-    .dark-bar
-      .inner
-        .container{:id => "location"}
-          .label
-            %h1 Location
-          = yield :location
+      -if controller_name == "sessions"
+        .label
+          %h1 Admin
+        .content
+          = yield
+      -else
+        .label
+          %h1 Events
+        .content
+          = yield :event
+    -if controller_name != "sessions"
+    
+      .dark-bar
+        .inner
+          .container{:id => "location"}
+            .label
+              %h1 Location
+            = yield :location
 
                 
-    .light-bar
-      .inner
-        .container{:id => "about"}
-          .label
-            %h1 About
-          .content.mbl
-            .row
-              .span5.offset1
-                %p.mbl 
-                  In Teesside there are hundreds of creative businesses who can benefit from knowing each other. Many of the businesses are relatively small in size, focusing on a specific skill or service. Everyone can benefit from knowing other professionals in their own trades and networking with other professionals who offer skills and services they may require in the future.
-              .span5
-                %p 
-                  There will be developers with their laptops out sharing code and working on problems. There will be freelance developers and designers looking to connect with agencies. There will be photographers looking to offer their services to others. There will be business owners who may be recruiting. Most importantly there will be creative people networking with their peers.
-                  
-                  
-
-
-            
-
+      .light-bar
+        .inner
+          .container{:id => "about"}
+            .label
+              %h1 About
+            .content.mbl
+              .row
+                .span5.offset1
+                  %p.mbl 
+                    In Teesside there are hundreds of creative businesses who can benefit from knowing each other. Many of the businesses are relatively small in size, focusing on a specific skill or service. Everyone can benefit from knowing other professionals in their own trades and networking with other professionals who offer skills and services they may require in the future.
+                .span5
+                  %p 
+                    There will be developers with their laptops out sharing code and working on problems. There will be freelance developers and designers looking to connect with agencies. There will be photographers looking to offer their services to others. There will be business owners who may be recruiting. Most importantly there will be creative people networking with their peers.
     = javascript_include_tag "application"

@@ -9,7 +9,11 @@ class Event < ActiveRecord::Base
     begin
       Event.find(self.id - 1)
     rescue ActiveRecord::RecordNotFound
-      Event.first
+      if Event.first
+        Event.first
+      else
+        ""
+      end
     end
   end
 
@@ -17,7 +21,11 @@ class Event < ActiveRecord::Base
     begin
       Event.find(self.id + 1)
     rescue ActiveRecord::RecordNotFound
-      Event.last
+      if Event.last
+        Event.last
+      else
+        ""
+      end
     end
   end  
   

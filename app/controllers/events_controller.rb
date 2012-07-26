@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   def index
     @event = Event.first
-    @atten = @event.prev.attendence unless @event.prev.attendence.nil?
-    @drinks = @event.prev.drinks unless @event.prev.attendence.nil?
+    @atten = @event.prev.attendence
+    @drinks = @event.prev.drinks 
   end
   
   def show
