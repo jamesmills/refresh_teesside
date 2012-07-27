@@ -186,7 +186,7 @@ body {
 }
 
 p{
-	.font-size(30);
+	.font-size(15);
 	color:@common;
 	text-shadow: 1px 1px 0px #FFF;	
 }
@@ -407,26 +407,6 @@ li.schedule:before {
 
 /* 7 Media ----------------------------------------- */
 
-// Phone
-
-@media (max-width: 480px) {
-	
-    
-    .label {
-        margin-left: -10px;
-    }
-    
-    .dark-bar .inner, .light-bar .inner {
-        padding: 0 5px;
-    }
-
-/* 		[class*="span"] {
-		margin-left: 5px;
-	 }*/
-   
-   
-}
-
 // Tablet
 
 @media (max-width: 767px) {
@@ -532,5 +512,25 @@ li.schedule:before {
 			text-shadow: 1px 2px 0px #FFF;
 			line-height:1;	
 		}
+}
+
+// Phone
+
+@media (max-width: 480px) {
+	
+    
+    .label {
+        margin-left: -10px;
+    }
+    
+    .dark-bar .inner, .light-bar .inner {
+        padding: 0 5px;
+    }
+
+ 		[class*="span"] {
+		margin-left: 5px;
+	 }
+   
+   
 }
 
